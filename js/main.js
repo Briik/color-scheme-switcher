@@ -1,3 +1,4 @@
+/*  This is the simple, and long, way...
 var redButton = document.getElementById("redButton");
 var whiteButton = document.getElementById("whiteButton");
 var blueButton = document.getElementById("blueButton");
@@ -19,3 +20,14 @@ redButton.addEventListener("click", handleRedClickEvent);
 whiteButton.addEventListener("click", handleWhiteClickEvent);
 blueButton.addEventListener("click", handleBlueClickEvent);
 yellowButton.addEventListener("click", handleYellowClickEvent);
+*/
+//THIS is the professional way.
+var buttons = document.querySelectorAll("li");
+console.log(buttons);
+for (var i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener("click", function(){
+  console.log(this);
+  document.body.className = this.className;
+  //This works by giving the entire HTML <body> the same className as the specified button!
+});
+}
